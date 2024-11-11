@@ -1,0 +1,19 @@
+.active-item {
+  border-left: 8px solid var(--ion-color-primary);
+}
+.logo {
+  width: 70px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 50px;
+  }
+}

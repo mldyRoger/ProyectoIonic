@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registro de nuevo usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="register-container">
+    <ion-card >
+      <ion-card-header color="secondary">
+        <ion-card-title>MobUTEQ</ion-card-title>
+        <ion-card-subtitle>Ingresa tus datos</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <ion-list>
+            <ion-item>
+              <ion-label position="floating">Nombre</ion-label>
+              <ion-input formControlName="firstName" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Apellido Paterno</ion-label>
+              <ion-input formControlName="lastName" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Apellido Materno</ion-label>
+              <ion-input formControlName="secondLastName" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Correo electrónico</ion-label>
+              <ion-input formControlName="email" type="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Contraseña</ion-label>
+              <ion-input formControlName="password" type="password"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Confirmar contraseña</ion-label>
+              <ion-input formControlName="validatePassword" type="password"></ion-input>
+            </ion-item>
+          </ion-list>
+    
+          <ion-button expand="full" type="submit" [disabled]="registerForm.invalid">Registrar</ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card> 
+  </div>
+</ion-content>

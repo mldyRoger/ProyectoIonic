@@ -1,0 +1,98 @@
+/*#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+*/
+
+ion-card {
+  margin: 10px;
+}
+
+ion-card-title {
+  font-size: 1.2rem;
+  color: #3880ff;
+}
+
+ion-card-content {
+  font-size: 1rem;
+}
+
+/* Media queries para ajustes adicionales */
+@media (min-width: 768px) {
+  ion-card-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  ion-card-title {
+    font-size: 1.6rem;
+  }
+}
+
+
+
+.box {
+  background-color: #f4f5f8;
+  text-align: center;
+  color: black;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+
+ion-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.responsive-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
+}
+
+.card-content {
+  max-height: 100px; /* Ajusta según necesites */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* Muestra solo 3 líneas */
+}
+.button-container {
+  margin-top: auto; /* Empuja los botones hacia abajo */
+  display: flex;
+  justify-content: flex-end; /* Alinea los botones a la derecha */
+  padding-bottom: 3px;
+}
+.icon-card{
+  font-size: 16px;
+  margin-right: 3px;
+}
+.btn-danger{
+  background-color: red;
+}

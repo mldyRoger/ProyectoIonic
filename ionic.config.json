@@ -1,0 +1,7 @@
+{
+  "name": "client-engine",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

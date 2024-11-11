@@ -1,0 +1,27 @@
+<ion-split-pane contentId="content">
+  <ion-menu contentId="content">
+    <ion-header [translucent]="true">
+      <ion-toolbar>
+        <img src="../../../assets/images/logo.png" 
+ alt="Logo de Healthy Life" class="logo">
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
+          <ion-item [button]="true" [routerLink]="p.url" router-direction="root" [class.active-item]="selectedPath === p.url">
+            <ion-label>{{ p.title }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-item [button]="true" (click)="logout()">
+          <ion-icon name="log-out" slot="start">
+            Logout
+          </ion-icon>
+          <ion-label>Cerrar sesión</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="content"></ion-router-outlet>
+</ion-split-pane>

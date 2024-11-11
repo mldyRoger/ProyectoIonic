@@ -1,0 +1,103 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+ion-loading.my-custom-loading {
+  /*.spinner {
+    display: none;
+  }*/
+  .loading-wrapper {
+    background: transparent url('../assets/images/duck.gif') no-repeat center center;
+    // background-size: contain;
+    background-size: 200px 200px; /* to change dimension of background */
+    padding-top: 200px; /* padding top of white square */
+    padding-bottom: 200px; /* padding bottom of white square */
+    padding-left: 200px;
+    padding-right: 200px;
+    /* Removemos la sombra del borde que le da altura*/
+    box-shadow: none;
+  }
+}
+
+ion-loading.my-custom-loading-2 {
+  /*.spinner {
+    display: none;
+  }*/
+  .loading-wrapper {
+    background: transparent url('../assets/images/tim-gilardi-bunny-loading-animation3.gif') no-repeat center center;
+    // background-size: contain;
+    background-size: 200px 200px; /* to change dimension of background */
+    padding-top: 200px; /* padding top of white square */
+    padding-bottom: 200px; /* padding bottom of white square */
+    padding-left: 200px;
+    padding-right: 200px;
+    /* Removemos la sombra del borde que le da altura*/
+    box-shadow: none;
+  }
+}
+
+ion-loading.my-custom-loading-3 {
+  /*.spinner {
+    display: none;
+  }*/
+  .loading-wrapper {
+    background: transparent url('../assets/images/gifloading.gif') no-repeat center center;
+    // background-size: contain;
+    background-size: 200px 200px; /* to change dimension of background */
+    padding-top: 200px; /* padding top of white square */
+    padding-bottom: 200px; /* padding bottom of white square */
+    padding-left: 200px;
+    padding-right: 200px;
+    /* Removemos la sombra del borde que le da altura*/
+    box-shadow: none;
+  }
+}
+
+ion-loading.my-custom-loading-4 {
+  /*.spinner {
+    display: none;
+  }*/
+  .loading-wrapper {
+    background: transparent url('../assets/images/loading1.gif') no-repeat center center;
+    // background-size: contain;
+    background-size: 200px 200px; /* to change dimension of background */
+    padding-top: 200px; /* padding top of white square */
+    padding-bottom: 200px; /* padding bottom of white square */
+    padding-left: 200px;
+    padding-right: 200px;
+    /* Removemos la sombra del borde que le da altura*/
+    box-shadow: none;
+  }
+}
+
+ion-loading.my-custom-loading-5 {
+  /*.spinner {
+    display: none;
+  }*/
+  .loading-wrapper {
+    background: transparent url('../assets/images/loading8.webp') no-repeat center center;
+    // background-size: contain;
+    background-size: 200px 200px; /* to change dimension of background */
+    padding-top: 200px; /* padding top of white square */
+    padding-bottom: 200px; /* padding bottom of white square */
+    padding-left: 200px;
+    padding-right: 200px;
+    /* Removemos la sombra del borde que le da altura*/
+    box-shadow: none;
+  }
+}
+
+ion-loading.my-custom-loading-6 {
+  /*.spinner {
+    display: none;
+  }*/
+  .loading-wrapper {
+    background: transparent url('../assets/images/loading6.gif') no-repeat center center;
+    // background-size: contain;
+    background-size: 200px 200px; /* to change dimension of background */
+    padding-top: 200px; /* padding top of white square */
+    padding-bottom: 200px; /* padding bottom of white square */
+    padding-left: 200px;
+    padding-right: 200px;
+    /* Removemos la sombra del borde que le da altura*/
+    box-shadow: none;
+  }
+}
