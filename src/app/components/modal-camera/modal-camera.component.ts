@@ -3,7 +3,7 @@ import { PhotoService } from '../../services/photo.service';
 
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import {ModalController} from "@ionic/angular";
-import { getStorage, ref, uploadString, getDownloadURL } from 'firebase/storage';
+import { getStorage, ref, uploadString, getDownloadURL, deleteObject, listAll  } from 'firebase/storage';
 import { initializeApp } from "firebase/app";
 
 
@@ -39,9 +39,9 @@ export class ModalCameraComponent  implements AfterViewInit {
   }
   ngAfterViewInit() {
     // Solo llama a la cámara si es escritorio
-    if (this.isDesktop) {
+   // if (this.isDesktop) {
       this.takePhotoWithWebCamera();
-    }
+    //}
   }
 
   isMobile(): boolean {
