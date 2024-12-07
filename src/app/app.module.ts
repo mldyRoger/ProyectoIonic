@@ -10,6 +10,7 @@ import { provideHttpClient } from "@angular/common/http";
 import { ServiceWorkerModule } from '@angular/service-worker';
 //import { ServiceWorkerModule } from '@angular/service-worker';
 //import { ServiceWorkerModule } from '@angular/service-worker';
+import { QRCodeModule } from 'angularx-qrcode';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +19,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
   // Register the ServiceWorker as soon as the application is stable
   // or after 30 seconds (whichever comes first).
   registrationStrategy: 'registerWhenStable:30000'
-})],
+}), QRCodeModule ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, provideHttpClient()],
   bootstrap: [AppComponent],
 })

@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ existId ? 'Editar' : 'Agregar' }} asistente</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="close-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="modal-content">
+    <ion-grid>
+      <form #form="ngForm" (ngSubmit)="guardarAsistente()">
+      <ion-row>
+        <ion-col size="12">
+          <ion-input
+           type="text" id="nombre" [(ngModel)]="infoAsistente.nombre" name="nombre"
+           label="Nombre del asistente"
+           labelPlacement="floating"
+           maxlength="50"
+           fill="outline"
+           required
+            ></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-input
+           type="email" id="correo" [(ngModel)]="infoAsistente.correo" name="correo"
+           label="Correo"
+           labelPlacement="floating"
+           maxlength="250"
+           fill="outline"
+           required
+            ></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-input
+           type="text" id="telefono" [(ngModel)]="infoAsistente.telefono" name="telefono"
+           label="Telefono"
+           labelPlacement="floating"
+           maxlength="250"
+           fill="outline"
+           required
+            ></ion-input>
+        </ion-col>
+
+        
+      </ion-row>
+      <ion-row>
+      </ion-row>  
+        </form>
+      <ion-item-divider>
+      </ion-item-divider>
+    </ion-grid>
+  </div>
+<!--<ion-toast
+    [isOpen]="isToastOpen"
+    [message]="toastMessage"
+    [duration]="5000"
+  ></ion-toast>-->
+</ion-content>
+<ion-footer style="background: #f5f5f5;">
+  <ion-button color="medium" (click)="dismiss()">Cancelar</ion-button>
+  <ion-button (click)="guardarAsistente()" [disabled]="form.invalid">Guardar</ion-button>
+</ion-footer>

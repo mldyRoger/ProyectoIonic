@@ -16,7 +16,7 @@ export class LoginPage implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               private authService: AuthService,
-              private loadingController: LoadingController) {
+              private loadingController: LoadingController,) {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -32,6 +32,14 @@ export class LoginPage implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
+    /*if(!this.loginForm){
+      this.router.navigate(['/login']);
+    }*/
+    //this.router.navigate(['/login']);
+    /*if (this.authService.currentUserValue) {
+      this.router.navigate(['/_']);  // O la ruta correspondiente
+    }
+    this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/_';*/
   }
   async onSubmit() {
     if (this.loginForm.invalid) {
@@ -51,6 +59,7 @@ export class LoginPage implements OnInit {
           alert('Error al iniciar sesión, por favor intente de nuevo.');
         }
       });
+      //this.router.navigate(['/_']);
   }
   async presentLoading() {
     this.loading = await this.loadingController.create({

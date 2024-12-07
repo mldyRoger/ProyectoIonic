@@ -3,28 +3,83 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Asistentes</ion-title>
+    <ion-title>Eventos RealTime</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content color="light">
-  <ion-list [inset]="true">
-    <ion-item>
-      <ion-label><ion-checkbox labelPlacement="start">Rogelio Gudino de Leon</ion-checkbox></ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label><ion-checkbox labelPlacement="start">Salvador Torres Cestellos</ion-checkbox></ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label><ion-checkbox labelPlacement="start">Daniela Marbella Pena Rangel</ion-checkbox></ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label><ion-checkbox labelPlacement="start">Michelle Bocanegra Mandujano</ion-checkbox></ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label><ion-checkbox labelPlacement="start">Jose Jimenez Gomez</ion-checkbox></ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label><ion-checkbox labelPlacement="start">Jaime Lopez Juarez</ion-checkbox></ion-label>
+    <ion-list>
+      <ion-row>
+      <ion-col *ngFor="let event of events" size-md="6" size-sm="12" size-lg="4">
+        <ion-card class="responsive-card" [ngClass]="{ 'selected-card': isSelected(event.id)}" 
+        (click)="selectEventId(event.id)">
+          <ion-card-header>
+            
+            <ion-card-title>{{event.nombre}}</ion-card-title>
+          </ion-card-header>
+  
+          <ion-item-divider color="secondary">
+            <ion-label></ion-label>
+          </ion-item-divider>
+          <ion-card-content class="card-content">
+            
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+ 
+  <ion-grid>
+    <ion-row class="ion-justify-content-end">
+      <ion-button aria-label="Escanear"  color="secondary" (click)="startScan()">
+        Escanear QR
+        <ion-icon name="qr-code-outline"></ion-icon>
+      </ion-button>
+      <ion-button aria-label="Escanear"  color="secondary" (click)="goToEvents()">
+       Eventos
+      </ion-button> 
+    </ion-row>
+  </ion-grid>
+  <ion-list>
+    <ion-item *ngFor="let barcode of barcodes">
+      <ion-label position="stacked">{{ barcode.format }}</ion-label>
+      <ion-input type="text" [value]="barcode.rawValue"></ion-input>
     </ion-item>
   </ion-list>
+  <ion-row *ngIf="selectedEventId">
+    <ion-col size="12">
+      <!-- Asistentes Asistidos -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title><h5>Asistidos </h5></ion-card-title>
+          <ion-row class="ion-justify-content-end">
+            <img src="../../../assets/images/live.gif" alt="icon en vivo" class="logo">
+          </ion-row>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item *ngFor="let asistido of asistentesPorEvento[selectedEventId].asistidos">
+            <ion-label>{{ asistido.nombre }} - {{ asistido.correo }}</ion-label>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="selectedEventId">
+    <ion-col size="12">
+      <!-- Asistentes Pendientes -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title><h5>Asistentes Pendientes</h5></ion-card-title>
+          <ion-row class="ion-justify-content-end">
+            <img src="../../../assets/images/live.gif" alt="icon en vivo" class="logo">
+          </ion-row>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item *ngFor="let pendiente of asistentesPorEvento[selectedEventId].pendientes">
+            <ion-label>{{ pendiente.nombre }} - {{ pendiente.correo }}</ion-label>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-content>

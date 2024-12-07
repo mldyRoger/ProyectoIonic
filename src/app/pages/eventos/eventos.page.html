@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Eventos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Eventos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid>
+    <ion-row class="ion-justify-content-end">
+      <ion-button aria-label="Agregar evento"  color="secondary" (click)="abrirModal('', '', '', '', '', '')">
+        Agregar
+        <ion-icon name="add-circle"></ion-icon>
+      </ion-button>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <ion-row>
+    <ion-col *ngFor="let event of events" size-md="6" size-sm="12" size-lg="4">
+      <ion-card class="responsive-card" >
+        <ion-card-header>
+          
+          <ion-card-title>{{event.nombre}}</ion-card-title>
+          <ion-card-subtitle>
+            <ion-icon name="timer" class="icon-card" color="secondary"></ion-icon>
+            <ion-label color="secondary">Fecha: {{event.fecha}}</ion-label>
+          </ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-item-divider color="secondary">
+          <ion-label></ion-label>
+        </ion-item-divider>
+        <ion-card-content class="card-content">
+          {{event.descripcion}}
+        </ion-card-content>
+        <div class="button-container">
+            <ion-buttons slot="primary">
+              <ion-button color="secondary" aria-label="Eliminar actividad" (click)="abrirModal(event.id, event.nombre, event.descripcion, event.fecha, event.status, event.user)">
+                Editar
+                <ion-icon slot="end" name="create"></ion-icon>
+              </ion-button>
+              <ion-button color="primary" aria-label="Editar actividad" (click)="goToDetalleEventosPage(event.id, event.nombre, event.descripcion, event.fecha, event.status, event.user)">
+                Asistentes
+                <ion-icon slot="end" name="checkmark-done-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+        </div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+    <ion-item-options>
+      <ion-item-option>Favorite</ion-item-option>
+      <ion-item-option color="danger">Delete</ion-item-option>
+    </ion-item-options>
+
+
+</ion-list>
+
+</ion-content>

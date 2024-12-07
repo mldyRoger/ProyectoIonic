@@ -18,13 +18,9 @@ export class SplitPanePage implements OnInit {
       url: '/',
     },
     {
-      title: 'Asistentes',
-      url: './',
-    },
-    {
-      title: 'Archivos',
-      url: '/camera',
-    },
+      title: 'Eventos',
+      url: '/eventos',
+    }
     /*{
       title: 'Habitaciones',
       url: './habitaciones',

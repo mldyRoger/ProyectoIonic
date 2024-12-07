@@ -18,11 +18,11 @@ export class AuthService {
   }
 
   register(registerForm: FormGroup){
-    return this.httpClient.post('http://127.0.0.1:5000/registro', registerForm.value);
+    return this.httpClient.post('https://parcial2api-production.up.railway.app/api/auth/registro', registerForm.value);
   }
 
   login(email: string, password: string) {
-    return this.httpClient.post<any>(`http://127.0.0.1:5000/login`, { email, password })
+    return this.httpClient.post<any>(`https://parcial2api-production.up.railway.app/api/auth/login`, { email, password })
       .pipe(map(user => {
         if (user && user.token) {
           localStorage.setItem('currentUser', JSON.stringify(user));
@@ -34,6 +34,25 @@ export class AuthService {
   getToken(): string | null {
     const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
     return currentUser.token || null;
+  }
+
+  getUserDataFromToken(): any {
+    const token = this.getToken();
+    if (token) {
+      return this.parseJwt(token); // Llamamos a la función parseJwt para decodificar el token
+    }
+    return null;
+  }
+
+  // Función para decodificar el JWT y extraer el payload
+  private parseJwt(token: string): any {
+    const base64Url = token.split('.')[1];  // La segunda parte es el payload
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');  // Ajustar base64Url a base64 estándar
+    const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+    
+    return JSON.parse(jsonPayload);  // Devolver el objeto JSON del payload
   }
   
   public get currentUserValue(): any {
