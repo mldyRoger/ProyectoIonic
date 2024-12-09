@@ -43,7 +43,14 @@ export class ModalEventosComponent  implements AfterViewInit  {
   //Registrar nuevo evento
   guardarEvento(){
     if (this.idEvento) {//Si es una actualizacion
-      this.eventsService.updateEvent(this.idEvento,this.nuevoEvento);
+      const updateEventoData = {
+        nombre: this.nuevoEvento.nombre,
+        descripcion: this.nuevoEvento.descripcion,
+        fecha: this.nuevoEvento.fecha,
+        status: this.nuevoEvento.status,
+        user: 'noasign',
+      };
+      this.eventsService.updateEvent(this.idEvento,updateEventoData);
       this.modalController.dismiss(); 
     }else{//Si es un nuevo registro
       const nuevoEventoData = {
