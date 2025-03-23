@@ -26,28 +26,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: 'queries',
-    loadChildren: () => import('./pages/queries/queries.module').then( m => m.QueriesPageModule)
-  },
-  {
-    path: 'camera',
-    loadChildren: () => import('./pages/camera/camera.module').then( m => m.CameraPageModule)
-  },
-  {
-    path: 'asistentes',
-    loadChildren: () => import('./pages/asistentes/asistentes.module').then( m => m.AsistentesPageModule)
-  },
-  {
     path: 'eventos',
     loadChildren: () => import('./pages/eventos/eventos.module').then( m => m.EventosPageModule)
   },
   {
     path: 'detalle-eventos',
     loadChildren: () => import('./pages/detalle-eventos/detalle-eventos.module').then( m => m.DetalleEventosPageModule)
-  },
-  {
-    path: 'asistencia-evento',
-    loadChildren: () => import('./pages/asistencia-evento/asistencia-evento.module').then( m => m.AsistenciaEventoPageModule)
   },
 ];
 

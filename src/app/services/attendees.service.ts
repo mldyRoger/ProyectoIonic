@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, from } from 'rxjs';
-import { initializeApp } from 'firebase/app';
+import { getApps, getApp, initializeApp } from 'firebase/app';
 import { getDatabase, ref, onValue, get, set, push, update, remove } from 'firebase/database';
 import { HttpClient } from '@angular/common/http';
+import { ConectionRealTimeService } from './conection-real-time.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,18 +11,8 @@ import { HttpClient } from '@angular/common/http';
 export class AttendeesService {
   private API_URL = 'https://parcial2api-production.up.railway.app/api/qr';
   private db: any;
-  constructor(private http: HttpClient) {
-    const firebaseConfig = {
-      apiKey: "AIzaSyBNiRfqnixu8Oi7Z0CRkc8nPJSA3PJSe2c",
-      authDomain: "appasistentes.firebaseapp.com",
-      databaseURL: "https://appasistentes-default-rtdb.firebaseio.com",
-      projectId: "appasistentes",
-      storageBucket: "appasistentes.firebasestorage.app",
-      messagingSenderId: "634175294662",
-      appId: "1:634175294662:web:2a50dcbe9698ce8b0adbc7"
-    };
-    const app = initializeApp(firebaseConfig);
-    this.db = getDatabase(app);
+  constructor(private http: HttpClient, private conectionRealTimeService: ConectionRealTimeService) {
+    this.db = this.conectionRealTimeService.getDatabase(); 
   }
   sendQR( asistente: string, evento: string, descripcion: string, fecha: string,email: string, qrData: string ): Observable<any> {
     const body = {

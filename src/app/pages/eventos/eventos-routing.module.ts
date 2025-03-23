@@ -6,7 +6,13 @@ import { EventosPage } from './eventos.page';
 const routes: Routes = [
   {
     path: '',
-    component: EventosPage
+    component: EventosPage,
+    children: [
+  {
+    path: 'detalle-eventos',
+    loadChildren: () => import('../detalle-eventos/detalle-eventos.module').then( m => m.DetalleEventosPageModule)
+  },
+    ]
   }
 ];
 

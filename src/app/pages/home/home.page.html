@@ -8,18 +8,14 @@
 </ion-header>
 <ion-content color="light">
     <ion-list>
-      <ion-row>
-      <ion-col *ngFor="let event of events" size-md="6" size-sm="12" size-lg="4">
+      <ion-row class="hor_container">
+      <ion-col *ngFor="let event of events" size-md="6" size-sm="6" size-lg="4">
         <ion-card class="responsive-card" [ngClass]="{ 'selected-card': isSelected(event.id)}" 
-        (click)="selectEventId(event.id)">
+        (click)="selectEventId(event.id)" style="border-bottom: 25px solid #7489d6;">
           <ion-card-header>
             
-            <ion-card-title>{{event.nombre}}</ion-card-title>
+            <ion-card-title color="dark">{{event.nombre}}</ion-card-title>
           </ion-card-header>
-  
-          <ion-item-divider color="secondary">
-            <ion-label></ion-label>
-          </ion-item-divider>
           <ion-card-content class="card-content">
             
           </ion-card-content>
@@ -30,13 +26,10 @@
  
   <ion-grid>
     <ion-row class="ion-justify-content-end">
-      <ion-button aria-label="Escanear"  color="secondary" (click)="startScan()">
-        Escanear QR
-        <ion-icon name="qr-code-outline"></ion-icon>
+      <ion-button aria-label="Escanear"  color="light" (click)="startScan()">
+        Escanear QR 
+          <img src="assets/images/qr.png" class="logo">
       </ion-button>
-      <ion-button aria-label="Escanear"  color="secondary" (click)="goToEvents()">
-       Eventos
-      </ion-button> 
     </ion-row>
   </ion-grid>
   <ion-list>

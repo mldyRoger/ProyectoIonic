@@ -9,26 +9,14 @@ import { AuthService } from "../../services/auth.service";
 })
 export class SplitPanePage implements OnInit {
   pages = [
-    /*{
-      title: 'Tabs',
-      url: '/split-pane/tabs-manager',
-    },*/
     {
       title: 'Inicio',
       url: '/',
     },
     {
       title: 'Eventos',
-      url: '/eventos',
+      url: './eventos',
     }
-    /*{
-      title: 'Habitaciones',
-      url: './habitaciones',
-    },*/
-    /*{
-      title: 'Trazos ECG',
-      url: '/split-pane/ecg-storage',
-    }*/
   ];
   selectedPath = '';
   constructor(

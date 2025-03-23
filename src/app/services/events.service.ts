@@ -17,8 +17,9 @@ interface Evento {
 }
 import { Injectable } from '@angular/core';
 import { Observable, from } from 'rxjs';
-import { initializeApp } from 'firebase/app';
+import { getApps, getApp, initializeApp } from 'firebase/app';
 import { getDatabase, ref, onValue, get, set, push, update, remove,query, orderByChild, equalTo } from 'firebase/database';
+import { ConectionRealTimeService } from './conection-real-time.service';
 
 @Injectable({
   providedIn: 'root'
@@ -37,18 +38,8 @@ export class EventsService {
       'id' in event
     );
   }
-  constructor() {
-    const firebaseConfig = {
-      apiKey: "AIzaSyBNiRfqnixu8Oi7Z0CRkc8nPJSA3PJSe2c",
-      authDomain: "appasistentes.firebaseapp.com",
-      databaseURL: "https://appasistentes-default-rtdb.firebaseio.com",
-      projectId: "appasistentes",
-      storageBucket: "appasistentes.firebasestorage.app",
-      messagingSenderId: "634175294662",
-      appId: "1:634175294662:web:2a50dcbe9698ce8b0adbc7"
-    };
-    const app = initializeApp(firebaseConfig);
-    this.db = getDatabase(app);
+  constructor(private conectionRealTimeService: ConectionRealTimeService) {
+    this.db = this.conectionRealTimeService.getDatabase(); 
   }
 
   getEvents(): Observable<any> {

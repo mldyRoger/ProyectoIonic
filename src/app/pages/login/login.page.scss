@@ -38,14 +38,14 @@ ion-button {
   margin: 20px;
 }
 
-.login-container {
+/*.login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100%;
   padding: 0 32px;
-}
+}*/
 
 ion-button {
   margin-top: 32px;
@@ -56,5 +56,70 @@ ion-button {
   text-align: center;
 }
 
-
+@media only screen and (min-width: 1024px) {
+  .login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 32px;
+  }
+  .container-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 5px;
+    width: 100%;
+  }
+  .logo{
+    width: 150px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 32px;
+  }
+  .container-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 5px;
+    width: 100%;
+  }
+  .logo{
+    width: 60%;
+  }   
+}
+@media only screen and (min-width: 769px) and (max-width: 1023px) {
+  .login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 32px;
+  }
+  .container-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 5px;
+    width: 100%;
+  }
+  .logo{
+    width: 150px;
+  }
+}
+.color-bg{
+  background-color: #252526;
+}   
+.color-bg-pink{
+  background-color: #fc5d8e !important;
+}
 

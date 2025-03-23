@@ -1,15 +1,13 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Registro de nuevo usuario</ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="register-container">
+  <div class="login-container">
+    <div class="container-logo">
+      <img src="assets/images/quick-list-logo.png" alt="Logo de la app" class="logo"/>
+    </div>
     <ion-card >
-      <ion-card-header color="secondary">
-        <ion-card-title>MobUTEQ</ion-card-title>
-        <ion-card-subtitle>Ingresa tus datos</ion-card-subtitle>
+      <ion-card-header class="color-bg">
+        <ion-card-title color="light">Regístrate</ion-card-title>
+        <ion-card-subtitle color="light">Ingresa tus datos</ion-card-subtitle>
       </ion-card-header>
     
       <ion-card-content>
@@ -41,7 +39,10 @@
             </ion-item>
           </ion-list>
     
-          <ion-button expand="full" type="submit" [disabled]="registerForm.invalid">Registrar</ion-button>
+          <ion-button expand="full" type="submit" [disabled]="registerForm.invalid" color="tertiary">Registrar</ion-button>
+          <p class="register-link">
+            ¿Ya tienes una cuenta? <a routerLink="/login">Inicia sesión</a>
+          </p>
         </form>
       </ion-card-content>
     </ion-card> 

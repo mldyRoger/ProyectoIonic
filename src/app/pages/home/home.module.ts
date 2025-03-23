@@ -16,7 +16,7 @@ import { BarcodeScanningModalComponent } from './barcode-scanning-modal.componen
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    SharedTestingModule
+    SharedTestingModule,
   ],
   declarations: [HomePage, BarcodeScanningModalComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

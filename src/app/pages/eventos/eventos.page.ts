@@ -45,7 +45,7 @@ export class EventosPage implements OnInit {
 
   goToDetalleEventosPage(id:string, nombre:string, descripcion:string, fecha:string, status:string, user:string) {
       // Usar state para pasar ambos valores
-      this.router.navigate(['/detalle-eventos'], {
+      this.router.navigate(['_/detalle-eventos'], {
         state: {
           id: id,
           nombre: nombre,

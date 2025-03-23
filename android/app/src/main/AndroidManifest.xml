@@ -37,7 +37,7 @@
             android:value="barcode_ui"/>
         </provider>
     </application>
- <uses-feature android:name="android.hardware.camera" android:required="false" />
+<uses-feature android:name="android.hardware.camera" android:required="false" />
     <!-- Permissions -->
 
     <uses-permission android:name="android.permission.INTERNET" />

@@ -16,7 +16,7 @@ export class LoginPage implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               private authService: AuthService,
-              private loadingController: LoadingController,) {
+              private loadingController: LoadingController) {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -32,14 +32,6 @@ export class LoginPage implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
-    /*if(!this.loginForm){
-      this.router.navigate(['/login']);
-    }*/
-    //this.router.navigate(['/login']);
-    /*if (this.authService.currentUserValue) {
-      this.router.navigate(['/_']);  // O la ruta correspondiente
-    }
-    this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/_';*/
   }
   async onSubmit() {
     if (this.loginForm.invalid) {
@@ -50,7 +42,8 @@ export class LoginPage implements OnInit {
       .subscribe({
         next: async () => {
           await this.dismissLoading();
-          this.router.navigate(['/_']);
+          this.router.navigate(['']);
+          console.log('verga')
         },
         error: async error => {
           // Handle login errors
@@ -59,12 +52,11 @@ export class LoginPage implements OnInit {
           alert('Error al iniciar sesión, por favor intente de nuevo.');
         }
       });
-      //this.router.navigate(['/_']);
   }
   async presentLoading() {
     this.loading = await this.loadingController.create({
       spinner: null,
-      cssClass: 'my-custom-loading-5',
+      cssClass: 'my-custom-loading-3',
       // message: 'Cargando aplicación...',
     });
     await this.loading.present();

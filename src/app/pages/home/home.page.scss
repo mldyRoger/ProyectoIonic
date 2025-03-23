@@ -97,18 +97,18 @@ ion-row {
   background-color: red;
 }
 .selected-card {
-  background-color: #b9e1fe !important; 
-  border-color: #007bff !important; 
-  color: #072b4a !important;      
+  background-color: #7489d6 !important; 
+  border-color: #7489d6 !important; 
+  color: #ffffff !important;      
 }
 .selected-card ion-item-divider{
-  background-color: #0078ca !important;  
+  background-color: #B0E7F1 !important;  
 }
 .selected-card ion-card-title{
-  color: #072b4a !important; 
+  color: #ffffff !important; 
 }
 .logo {
-  width: 50px;
+  width: 40px;
   height: auto;
 }
 /* Esconder elementos de la UI cuando el escaneo esté activo 
@@ -189,4 +189,20 @@ ion-button[disabled] {
 }
 body.barcode-scanning-active {
   overflow: hidden;
+}
+.hor_container{
+  flex-wrap: nowrap;
+  overflow-x: scroll hidden !important;
+  overflow-y: hidden;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+.color-bg{
+  background-color: #252526;
+}   
+.color-bg-pink{
+  background-color: #fc5d8e !important;
+}
+.color-bg-origin{
+  background-color: #7489d6 !important;
 }

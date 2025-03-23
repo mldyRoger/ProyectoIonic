@@ -1,16 +1,15 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Inicio de sesión</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 
 <ion-content [fullscreen]="true">
   <div class="login-container">
+    <div class="container-logo">
+      <img src="assets/images/quick-list-logo.png" alt="Logo de la app" class="logo"/>
+    </div>
     <ion-card >
-      <ion-card-header color="secondary">
-        <ion-card-title>MobUTEQ</ion-card-title>
-        <ion-card-subtitle>Ingresa tus credenciales</ion-card-subtitle>
+      <ion-card-header class="color-bg">
+        <ion-card-title color="light">Iniciar sesión</ion-card-title>
+        <ion-card-subtitle color="light">Ingresa tus credenciales</ion-card-subtitle>
       </ion-card-header>
     
       <ion-card-content>
@@ -25,9 +24,9 @@
               <ion-input formControlName="password" type="password"></ion-input>
             </ion-item>
           </ion-list>
-          <ion-button expand="full" type="submit" [disabled]="loginForm.invalid">Login</ion-button>
+          <ion-button expand="full" type="submit" [disabled]="loginForm.invalid" color="tertiary">Login</ion-button>
           <p class="register-link">
-            ¿No tienes una cuenta? <a routerLink="/register">Regístrate aquí</a>
+            ¿No tienes una cuenta? <a routerLink="/register">Regístrate</a>
           </p>
         </form>
       </ion-card-content>

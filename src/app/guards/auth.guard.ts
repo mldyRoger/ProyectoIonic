@@ -19,7 +19,7 @@ export class AuthGuard {
     if (currentUser && currentUser.token !== undefined) {
       return true;
     }
-    this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
+    this.router.navigate(['/login'],);
     return false;
   }
 }
